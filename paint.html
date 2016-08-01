@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="paint.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div id="nav">
+		<h1 id="title">Paint</h1>
+	</div>
+	<div class="container">
+		<div class="column1">
+			<div id="canvas">
+				<canvas id="panel" data-calque="panel" class='panel line' width="800" height="400"></canvas>
+				<canvas id="color" width="500" height="128"></canvas>
+				
+
+			</div>
+			<canvas id="save" class='hide line' width="800" height="400">
+			</canvas>
+		</div>
+		<div class="color1">
+			<div>Preview:</div>
+			<div id="preview"></div>
+			<div id="pick"></div>
+			<div>
+				<form id="rgb">
+				<label>RGB: </label>
+					<input type="text" id="rgbVal" />
+					<input type="submit" class="btn" id="submit">
+				</form>
+				<div>
+					<form id="hsl">
+						<label>HSL: </label>
+						<input type="text" id="hslVal" />
+						<input type="submit" class="btn btn-primary" id="submithsl">
+					</form>
+				</div>
+			</div>
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+	<div id="bouton">
+		<button class="outils btn" data-outils="crayon" id="crayon">Crayon</button>
+		<button class="outils btn" data-outils="circle" id="circle">Circle</button>
+		<button class="outils btn" data-outils="line" id="line">Line</button>
+		<button class="outils btn" data-outils="carre" id="carre">Carré</button>
+		<button class="outils btn" data-outils="gomme" id="gomme">Gomme</button>
+		<button class="outils btn" data-outils="gomme" id="clear">Clear</button>
+	</div>
+	<ul id="boutonl">
+		<li><input class="outils" id='champ1' type="range" value="2" max="20" min="1" step="1"></li>
+		<li>
+			<input class="remplie" data-remplie='vide' type="radio" name="vide" value="Vide" checked/> Vide
+			<input class="remplie" data-remplie='remplie' type="radio" name="vide" value="Remplie"/> Remplie
+		</li>
+		<li><a href="#" class="button" id="btn-download" download="my-file-name.png">Download</a></li>
+		<li><input type="file" id='input'></li>
+
+		<li id="nvcalque"><button id="calque" class="btn" data-calque="calque">Nouveaux calque</button><br/></li>
+
+		<li>
+			<input  type="radio" id="symetrie" name="symetrie" class="symetrie" data-symetrie="symetrie">symetrie horizontal
+			<input  type="radio" id="symetrie1" name="symetrie" class="symetrie1" data-verticale="verticale">symetrie verticale
+			<input  type="radio" id="default" name="symetrie" class="symetrie2" data-symetrie="default" checked>default
+		</li>
+	</ul>
+<!-- 	<button class="outils btn" data-outils="circle" id="circle">Circle</button>
+	<button class="outils btn" data-outils="line" id="line">Line</button>
+	<button class="outils btn" data-outils="carre" id="carre">Carré</button>
+	<button class="outils btn" data-outils="gomme" id="gomme">Gomme</button>
+	<input class="outils" id='champ1' type="range" value="2" max="20" min="1" step="1">
+	<input class="remplie" data-remplie='vide' type="radio" name="vide" value="Vide" checked/> Vide
+	<input class="remplie" data-remplie='remplie' type="radio" name="vide" value="Remplie"/> Remplie -->
+<!-- 	<a href="#" class="button" id="btn-download">Download</a>
+-->	<!-- <a href="#" class="button" id="btn-download" download="my-file-name.png">Download</a>
+<input type="file" id='input'>
+<button id="calque" class="outils btn" data-outils="calque">Nouveaux calque</button>
+<input  type="radio" id="symetrie" class="symetrie" data-symetrie="symetrie">symetrie</input> type="radio" 
+-->
+
+
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="paint.js"></script>
+</html>
